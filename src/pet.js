@@ -9,9 +9,9 @@ class Pet {
     static all = [] //- you have to remove those elements inside of this array, delete does not refresh the page. 
     // if you do delete an element you might have to add a method for the front end to FILTER out and remove that element from this array 
 
-    static petContainer = document.getElementById("pets-container") // where to append this object
+    static petsContainer = document.getElementById("pets-container") // where to append this object
 
-    constructor(id, name, age, species, breed, image_url, owner_id){  // mimic my backend with category id to easily access the has_many relationship 
+    constructor({id, name, age, species, breed, image_url, owner_id}){  // mimic my backend with category id to easily access the has_many relationship 
         this.id = id 
         this.name = name 
         this.age = age
@@ -44,6 +44,6 @@ class Pet {
     } // seperated from appending incase you wanna edit this, it wont automatically re-append to DOM. NO duplicates!
 
     slapOnDom(){
-        Pet.petContainer.appendChild(petHTML())
+        Pet.petsContainer.appendChild(this.petHTML())
     }
 }
