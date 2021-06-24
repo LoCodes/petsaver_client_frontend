@@ -11,3 +11,6 @@ petService.getPets()
 // any initializations of the application 
 
 
+// console.log(Pet.all)  - just checked objects in console 
+
+Pet.renderForm()

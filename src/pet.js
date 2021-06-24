@@ -11,6 +11,9 @@ class Pet {
 
     static petsContainer = document.getElementById("pets-container") // where to append this object
 
+
+    static petForm = document.getElementById("form-container")
+
     constructor({id, name, age, species, breed, image_url, owner_id}){  // mimic my backend with category id to easily access the has_many relationship 
         this.id = id 
         this.name = name 
@@ -45,5 +48,23 @@ class Pet {
 
     slapOnDom(){
         Pet.petsContainer.appendChild(this.petHTML())
+    }
+
+
+    static  renderForm(){
+        Pet.petForm.innerHTML += `
+        <form id="new-pet-form">
+            Name: <input type="text" id="name">
+            Age: <input type="text" id="age">
+            Species: <input type="text" id="species">
+            Breed: <input type="text" id="breed">
+            Image: <input type="text" id="image">
+
+            <input type="submit" id="create">
+
+        <form>
+        
+        `
+
     }
 }
