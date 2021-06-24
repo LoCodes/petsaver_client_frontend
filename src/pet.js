@@ -39,8 +39,14 @@ class Pet {
             <div>
                 <h3> ${this.name}</h3>
 
-                <p>${this.age} - ${this.species} - ${this.breed} - ${this.image_url}</p>
+                
 
+                <p>${this.age} - ${this.species} - ${this.breed}</p>
+
+                <img src=${this.image_url}>
+
+
+                
             </div>
         `
         return this.element
