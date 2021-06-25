@@ -30,12 +30,30 @@ class PetService{
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
-            image: document.getElementById('image').value,
-            owner_id: 1, //document.getElementById('owner_id').value UPDATE LATER!!
+            image: document.getElementById('image').value,  // NEEDS TO BE .SRC?? 
+            owner_id: 1, //document.getElementById('owner_id').value UPDATE LATER!
+        
         }
 
-        debugger;
+        //debugger;
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(pet)
+        }
+
+        fetch(`${this.endpoint}/pets`, configObj)
+        .then(resp => resp.json())
+        .then(pet => {
+            console.log(pet)
+        })
+
+        
     }
-    
+     
 }  
 

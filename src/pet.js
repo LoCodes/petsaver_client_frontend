@@ -64,7 +64,9 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input type="text" id="image">
+            Image: <input type="img" id="image">
+
+            
 
             <input type="submit" id="create">
 

@@ -21,6 +21,8 @@ Pet.petForm.addEventListener('submit', handleSubmit)
 // gather all data from createPet function and send post request to our service 
 
 function handleSubmit(){
-     petService.createPet()  
+    event.preventDefault()
+    petService.createPet()
+    event.target.reset()
    
 }
