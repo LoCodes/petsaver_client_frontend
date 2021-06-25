@@ -14,3 +14,13 @@ petService.getPets()
 // console.log(Pet.all)  - just checked objects in console 
 
 Pet.renderForm()
+
+Pet.petForm.addEventListener('submit', handleSubmit)
+
+
+// gather all data from createPet function and send post request to our service 
+
+function handleSubmit(){
+     petService.createPet()  
+   
+}
