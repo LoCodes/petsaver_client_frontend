@@ -27,6 +27,8 @@ class Pet {
         this.element = document.createElement('li') // instantiated with its own element
         this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
+        //this.element.image_url = this.image_url(100, 200);
+
 
 
         Pet.all.push(this)  // this is that newly made Pet instance 
@@ -41,7 +43,7 @@ class Pet {
 
                 
 
-                <p>${this.age} - ${this.species} - ${this.breed}</p>
+                <p>${this.age} - ${this.species} - ${this.breed} - ${this.image_url}</p>
 
                 <img src=${this.image_url}>
 
@@ -64,7 +66,7 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input type="img" id="image">
+            Image: <input type="img" id="image_url">
 
             
 

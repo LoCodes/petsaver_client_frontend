@@ -49,7 +49,9 @@ class PetService{
         fetch(`${this.endpoint}/pets`, configObj)
         .then(resp => resp.json())
         .then(pet => {
-            console.log(pet)
+            //console.log(pet)
+            const p = new Pet(pet)
+            p.slapOnDom()
         })
 
         
