@@ -29,6 +29,8 @@ class Pet {
         this.element.id = `pet-${this.id}`
         //this.element.image_url = this.image_url(100, 200);
 
+        this.element.addEventListener('click', this.handleClick)
+
 
 
         Pet.all.push(this)  // this is that newly made Pet instance 
@@ -46,10 +48,10 @@ class Pet {
                 <p>${this.age} - ${this.species} - ${this.breed} - ${this.image_url}</p>
 
                 <img src=${this.image_url}>
-
-
                 
             </div>
+
+            <button id='delete-btn'> Delete </button>
         `
         return this.element
     } // seperated from appending incase you wanna edit this, it wont automatically re-append to DOM. NO duplicates!
@@ -59,7 +61,7 @@ class Pet {
     }
 
 
-    static  renderForm(){
+    static renderForm(){
         Pet.petForm.innerHTML += `
         <form id="new-pet-form">
             Name: <input type="text" id="name">
@@ -75,6 +77,13 @@ class Pet {
         <form>
         
         `
+    }
 
+    handleClick = () =>{
+       
+        if (event.target.innerText === 'Delete'){
+            this.element.remove()
+            petService.deletePet(this.id)
+        }
     }
 }

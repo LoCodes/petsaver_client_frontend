@@ -56,6 +56,19 @@ class PetService{
 
         
     }
+
+    deletePet(id){
+        
+
+        fetch(`${this.endpoint}/pets/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => alert(json.message))
+    }
      
 }  
 
