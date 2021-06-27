@@ -29,7 +29,7 @@ class Pet {
         this.element.id = `pet-${this.id}`
         //this.element.image_url = this.image_url(100, 200);
 
-        this.element.addEventListener('click', this.handleClick)
+        this.element.addEventListener('click', this.handleDelete)
 
 
 
@@ -44,16 +44,11 @@ class Pet {
     petHTML(){
         this.element.innerHTML += `
             <div>
-                <h3> ${this.name}</h3>
-
-                
+                <h3> ${this.name}</h3>                
                 
                 <p>${this.age} - ${this.species} - ${this.breed} - ${this.owner_id}</p>
                 <img src=${this.image_url} height="200" width="250">
-
-                
-
-                
+                                
                 
             </div>
             <button id='delete-btn'> Delete </button>
@@ -75,7 +70,7 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input type="text" id="image">
+            Image: <input placeholder="url image, NOT WORKING" type="text" id="image">
 
             Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
 
@@ -95,7 +90,7 @@ class Pet {
 
     }
 
-    handleClick = () =>{
+    handleDelete = () =>{
        
         if (event.target.innerText === 'Delete'){
             this.element.remove()
