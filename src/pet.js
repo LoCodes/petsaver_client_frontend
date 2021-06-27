@@ -48,8 +48,10 @@ class Pet {
 
                 
                 
-                <p>${this.age} - ${this.species} - ${this.breed} </p>
+                <p>${this.age} - ${this.species} - ${this.breed} - ${this.owner_id}</p>
                 <img src=${this.image_url} height="200" width="250">
+
+                
 
                 
                 
@@ -78,15 +80,14 @@ class Pet {
             Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
 
             Owner: <select id="owner_id" name="owner_id" >
-                        <option value="1"> Loren </option>
-                        
+                        <option value="1"> Loren </option>                        
                         <option value="2"> John </option>
                         <option value="3"> Sally </option>
                         <option value="4"> Maria </option>
                         <option value="5"> Andy </option>
                     </select>
             
-            <input type="submit" id="create">
+            <input type="submit" id="create" >
         <form>
         
         `

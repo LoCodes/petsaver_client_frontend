@@ -35,7 +35,7 @@ class PetService{
             breed: document.getElementById('breed').value,
             image: document.getElementById('image').value,  // NEEDS TO BE .SRC?? 
             //image: document.getElementById('image').value,
-            owner_id: 1, //document.getElementById('owner_id').value UPDATE LATER!
+            owner_id: document.getElementById('owner_id').value, //document.getElementById('owner_id').value UPDATE LATER!
 
         
         
