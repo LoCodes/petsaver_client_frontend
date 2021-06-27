@@ -42,17 +42,17 @@ class Pet {
         this.element.innerHTML += `
             <div>
                 <h3> ${this.name}</h3>
+                
+                <p>${this.age} - ${this.species} - ${this.breed} </p>
+                <img src=${this.image_url} height="200" width="250">
 
                 
-
-                <p>${this.age} - ${this.species} - ${this.breed} - ${this.image_url}</p>
-
-                <img src=${this.image_url}>
                 
             </div>
-
             <button id='delete-btn'> Delete </button>
         `
+
+        //console.log(this.image_url)
         return this.element
     } // seperated from appending incase you wanna edit this, it wont automatically re-append to DOM. NO duplicates!
 
@@ -68,12 +68,11 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input type="img" id="image_url">
+            Image: <input type="text" id="image">
 
+            Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
             
-
             <input type="submit" id="create">
-
         <form>
         
         `
