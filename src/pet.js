@@ -33,6 +33,9 @@ class Pet {
 
 
 
+
+
+
         Pet.all.push(this)  // this is that newly made Pet instance 
 
     }
@@ -42,6 +45,8 @@ class Pet {
         this.element.innerHTML += `
             <div>
                 <h3> ${this.name}</h3>
+
+                
                 
                 <p>${this.age} - ${this.species} - ${this.breed} </p>
                 <img src=${this.image_url} height="200" width="250">
@@ -71,11 +76,22 @@ class Pet {
             Image: <input type="text" id="image">
 
             Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
+
+            Owner: <select id="owner_id" name="owner_id" >
+                        <option value="1"> Loren </option>
+                        
+                        <option value="2"> John </option>
+                        <option value="3"> Sally </option>
+                        <option value="4"> Maria </option>
+                        <option value="5"> Andy </option>
+                    </select>
             
             <input type="submit" id="create">
         <form>
         
         `
+
+
     }
 
     handleClick = () =>{
