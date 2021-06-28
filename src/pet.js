@@ -50,6 +50,7 @@ class Pet {
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>
+            <button id='edit-btn'> Edit </button>
             <button id='delete-btn'> Delete </button>
         `
 
