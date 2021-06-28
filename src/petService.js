@@ -37,11 +37,9 @@ class PetService{
             // owner_id: document.getElementById('owner_id').value, //UPDATE LATER!                
             // owner_parsed: parseInt(owner_id)
             owner_id: parseInt(document.getElementById('owner_id').value) // not grabbing name only id 
-
             
             
         }
-
         
 
         const configObj = {

@@ -33,9 +33,6 @@ class Pet {
 
 
 
-
-
-
         Pet.all.push(this)  // this is that newly made Pet instance 
 
     }
@@ -86,9 +83,25 @@ class Pet {
         <form>
         
         `
-
+        // const buttons = document.querySelector('button')
+        // for (const button of buttons){
+        //     button.addEventListener('click', handleButton)
+        // }
 
     }
+
+    // handleButton = () => {
+    //     if (event.target.innerText === 'Delete'){
+    //         this.element.remove()
+    //         petService.deletePet(this.id)
+    //     } else if (event.target.innerText === 'Edit'){
+    //         //do something 
+    //         this.element.onchange()
+    //     }
+
+    // }
+
+    // handleEdit 
 
     handleDelete = () =>{
        
