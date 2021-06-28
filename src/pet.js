@@ -35,7 +35,7 @@ class Pet {
 
         Pet.all.push(this)  // this is that newly made Pet instance 
 
-    }
+    }    
 
 
     petHTML(){
