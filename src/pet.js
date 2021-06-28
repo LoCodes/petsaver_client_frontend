@@ -48,8 +48,7 @@ class Pet {
                 
                 <p>${this.age} - ${this.species} - ${this.breed} - ${this.owner_id}</p>
                 <img src=${this.image_url} height="200" width="250">
-                                
-                
+                                                
             </div>
             <button id='delete-btn'> Delete </button>
         `
@@ -70,7 +69,7 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input placeholder="url image, NOT WORKING" type="text" id="image">
+            Image: <input placeholder="url image, NOT WORKING" type="text" id="image_url">
 
             Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
 

@@ -1,7 +1,6 @@
 
 // make all service calls regarding pet object 
 
-// making service call pertaining the pet object 
 
 
 class PetService{
@@ -33,12 +32,12 @@ class PetService{
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
-            image: document.getElementById('image').value,  // NEEDS TO BE .SRC?? 
-            //image: document.getElementById('image').value,
-            owner_id: document.getElementById('owner_id').value, //document.getElementById('owner_id').value UPDATE LATER!
-
-        
-        
+            image_url: document.getElementById('image_url').value,  //FIXED! 
+            
+            // owner_id: document.getElementById('owner_id').value, //UPDATE LATER!                
+            // owner_parsed: parseInt(owner_id)
+            owner_id: parseInt(document.getElementById('owner_id').value) // not grabbing name only id 
+            
         }
 
         
@@ -47,7 +46,7 @@ class PetService{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                //'Accept': 'application/json'
             },
             body: JSON.stringify(pet)
         }
@@ -58,14 +57,10 @@ class PetService{
             //console.log(pet)
             const p = new Pet(pet)
             p.slapOnDom()
-        })
-
-        
+        })        
     }
 
-    deletePet(id){
-        
-
+    deletePet(id){        
         fetch(`${this.endpoint}/pets/${id}`, {
             method: 'DELETE',
             headers: {
@@ -74,6 +69,5 @@ class PetService{
         })
         .then(resp => resp.json())
         .then(json => alert(json.message))
-    }
-     
+    }     
 } 
