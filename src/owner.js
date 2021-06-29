@@ -4,14 +4,14 @@ class Owner {
     static ownersContainer = document.getElementById("owners-container")  // grabbed the element were manipulating
 
     // do I wanna add a 
-    // static ownerForm = document.getElementById("form-container")
+    static ownerForm = document.getElementById("form-container")
 
 
     constructor({id, name}) {    // instantiated owner with its id and name 
         this.id = id
         this.name = name
 
-        this.element = document.createElement('ul')   // instantiated element with the owner 
+        this.element = document.createElement('p')   // instantiated element with the owner 
         this.element.dataset.id = this.id     // set the id to the element 
         this.element.id = `owner-${this.id}`  // set  new element id 
 
@@ -37,7 +37,24 @@ class Owner {
         Owner.ownersContainer.appendChild(this.ownerHTML())
     }
 
-    // static renderForm2() {
-    //     Owner.ownerForm
+    // static renderForm2() { // i may not need this 
+    //     Owner.ownerForm.innerHTML += `
+    //     <form id="new-owner-form">
+    //         New Owner Name: <input type="text" id="name">
+
+    //         Select Owner: 
+    //             <select id="owner-id" name="owner-id" > 
+    //                 <option value="owner-1"> Loren </option>
+    //                 <option value="owner-2"> John </option>
+    //                 <option value="owner-3"> Sally </option>
+    //                 <option value="owner-4"> Maria </option>
+    //                 <option value="owner-5"> Andy </option>
+
+    //             </select>
+    //         <input type="submit" id="create" >
+
+    //     </form>     
+
+    //     `
     // }
 }

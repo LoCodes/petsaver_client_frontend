@@ -22,13 +22,25 @@ ownerService.getOwners()
 Pet.renderForm()    // render the form 
 Pet.petForm.addEventListener('submit', handleSubmit) // submits form 
 
+// Owner.renderForm2() 
+// Owner.ownerForm.addEventListener('submit', handleSubmit2)
+
+
 
 // gather all data from createPet function and send post request to our service 
 
 function handleSubmit(){  // event handler for form 
     event.preventDefault()
     petService.createPet()
-    //ownerService.createOwner()
+    
     event.target.reset()
    
 }
+
+// function handleSubmit2(){
+
+//     event.preventDefault()
+//     ownerService.createOwner()
+    
+//     event.target.reset()
+// }
