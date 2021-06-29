@@ -36,4 +36,8 @@ class Owner {
     slapOnDom2() {   // appending the owners into the DOM 
         Owner.ownersContainer.appendChild(this.ownerHTML())
     }
+
+    // static renderForm2() {
+    //     Owner.ownerForm
+    // }
 }

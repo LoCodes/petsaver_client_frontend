@@ -16,4 +16,30 @@ class OwnerService {   //new instance of a class
             }
         })
     }
+
+
+    createOwner() {
+        const owner = {
+
+            name: document.getElementById('name').value 
+
+        }
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                //'Accept': 'application/json'
+            },
+            body: JSON.stringify(owner)
+        }
+
+        fetch(`${this.endpoint}/owners`, configObj)
+        .then(resp => resp.json())
+        .then(owner => {
+            //console.log(pet)
+            const o = new Owner(owner)
+            o.slapOnDom2()
+        })  
+    }
 }

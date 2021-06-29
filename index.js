@@ -28,6 +28,7 @@ Pet.petForm.addEventListener('submit', handleSubmit) // submits form
 function handleSubmit(){  // event handler for form 
     event.preventDefault()
     petService.createPet()
+    //ownerService.createOwner()
     event.target.reset()
    
 }
