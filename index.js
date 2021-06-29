@@ -1,8 +1,8 @@
 // global variables
 
 const base_url = "http://127.0.0.1:3000"   // need to only change here rather than everywhere 
-const petService = new PetService(base_url)  
-const ownerService = new OwnerService(base_url)
+const petService = new PetService(base_url)  //new instand of PetService call 
+const ownerService = new OwnerService(base_url) // new instance of OwnerService call
 
 // const deleteBttn = document.getElementById('delete-bttn')
 // deleteBttn.addEventListener('click', )
@@ -19,13 +19,13 @@ ownerService.getOwners()
 
 // console.log(Pet.all)  - just checked objects in console 
 
-Pet.renderForm()
-Pet.petForm.addEventListener('submit', handleSubmit)
+Pet.renderForm()    // render the form 
+Pet.petForm.addEventListener('submit', handleSubmit) // submits form 
 
 
 // gather all data from createPet function and send post request to our service 
 
-function handleSubmit(){
+function handleSubmit(){  // event handler for form 
     event.preventDefault()
     petService.createPet()
     event.target.reset()
