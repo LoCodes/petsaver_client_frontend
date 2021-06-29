@@ -2,7 +2,7 @@
 
 const base_url = "http://127.0.0.1:3000"   // need to only change here rather than everywhere 
 const petService = new PetService(base_url)  
-
+const ownerService = new OwnerService(base_url)
 
 // const deleteBttn = document.getElementById('delete-bttn')
 // deleteBttn.addEventListener('click', )
@@ -12,6 +12,7 @@ const petService = new PetService(base_url)
 
 
 petService.getPets()
+ownerService.getOwners()
 
 // any initializations of the application 
 
