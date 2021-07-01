@@ -28,8 +28,6 @@ class Pet {
         this.element = document.createElement('ol') // instantiated with its own element
         this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
-        //this.element.image_url = this.image_url(100, 200);
-
         this.element.addEventListener('click', this.handleDelete)
 
 
@@ -40,11 +38,13 @@ class Pet {
 
 
     petHTML(){
+        const owner = Owner.all.find(owner => this.owner_id === owner.id )
+        // debugger;
         this.element.innerHTML += `
             <div>
                 <h3> ${this.name}</h3>                
                 
-                <p>${this.age} - ${this.species} - ${this.breed} - ${this.owner_id}</p>
+                <p>${this.age} - ${this.species} - ${this.breed} - ${owner.name}</p>
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>
@@ -68,27 +68,31 @@ class Pet {
             Age: <input type="text" id="age">
             Species: <input type="text" id="species">
             Breed: <input type="text" id="breed">
-            Image: <input placeholder="url image, NOT WORKING" type="text" id="image_url">
+            Image: <input placeholder="image url" type="text" id="image_url">
 
-            Image2: <input type="file" id="imgInput" accept="image/png, image/jpeg">
+            
 
-            Owner: <select id="owner_id" name="owner_id" >
-                        <option value="1"> Loren </option>                        
-                        <option value="2"> John </option>
-                        <option value="3"> Sally </option>
-                        <option value="4"> Maria </option>
-                        <option value="5"> Andy </option>
-                    </select>
+            Owner: <select id="owner-select" name="owner-select" >
+            
+                   </select>
             
             <input type="submit" id="create" >
         <form>
         
         `
-        // const buttons = document.querySelector('button')
-        // for (const button of buttons){
-        //     button.addEventListener('click', handleButton)
-        // }
+        
+        
+        
+    }
 
+    static populateSelectBox() {
+        // debugger;
+        const selectBox = document.getElementById('owner-select')
+        for (const owner of Owner.all) {
+            
+            selectBox.innerHTML += ` <option value=${owner.id} > ${owner.name} </option> `
+            
+        }       
     }
 
     // handleButton = () => {

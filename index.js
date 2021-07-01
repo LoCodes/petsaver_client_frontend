@@ -4,15 +4,15 @@ const base_url = "http://127.0.0.1:3000"   // need to only change here rather th
 const petService = new PetService(base_url)  //new instand of PetService call 
 const ownerService = new OwnerService(base_url) // new instance of OwnerService call
 
-// const deleteBttn = document.getElementById('delete-bttn')
-// deleteBttn.addEventListener('click', )
+//const ownerName = new Owner(name)
 
 // new instance of PetService class,
 // so when we create methods that makes the fetch request were going to need to call it on that petService instance
 
 
-petService.getPets()
 ownerService.getOwners()
+petService.getPets()
+
 
 // any initializations of the application 
 
@@ -20,6 +20,7 @@ ownerService.getOwners()
 // console.log(Pet.all)  - just checked objects in console 
 
 Pet.renderForm()    // render the form 
+Pet.populateSelectBox()
 Pet.petForm.addEventListener('submit', handleSubmit) // submits form 
 
 // Owner.renderForm2() 

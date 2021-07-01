@@ -16,7 +16,7 @@ class Owner {
         this.element.id = `owner-${this.id}`  // set  new element id 
 
 
-        Pet.all.push(this)  // pushed all owners into all array 
+        Owner.all.push(this)  // pushed all owners into all array 
 
     }
 
