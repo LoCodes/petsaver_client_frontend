@@ -30,7 +30,7 @@ class Pet {
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
 
-
+        
 
         Pet.all.push(this)  // this is that newly made Pet instance 
 
@@ -38,8 +38,8 @@ class Pet {
 
 
     petHTML(){
-        const owner = Owner.all.find(owner => this.owner_id === owner.id )
-        // debugger;
+        const owner = Owner.all.find(owner => this.owner_id === owner.id ) // had to iterate over the owner to get owner.name
+        
         this.element.innerHTML += `
             <div>
                 <h3> ${this.name}</h3>                
@@ -73,7 +73,7 @@ class Pet {
             
 
             Owner: <select id="owner-select" name="owner-select" >
-            
+                        <option value="1"> Loren </option>
                    </select>
             
             <input type="submit" id="create" >
@@ -86,7 +86,7 @@ class Pet {
     }
 
     static populateSelectBox() {
-        // debugger;
+        //debugger;
         const selectBox = document.getElementById('owner-select')
         for (const owner of Owner.all) {
             

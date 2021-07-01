@@ -4,10 +4,6 @@ class OwnerService {   //new instance of a class
         this.endpoint = endpoint
     }
 
-    // set name() {
-    //     return this.name
-    // }
-
 
     getOwners(){     // fetch request to get owners 
         fetch(`${this.endpoint}/owners`)
@@ -23,28 +19,28 @@ class OwnerService {   //new instance of a class
     }
 
 
-    // createOwner() {
-    //     const owner = {
+    createOwner() {
+        const owner = {
 
-    //         name: document.getElementById('name').value 
+            name: document.getElementById('name').value 
 
-    //     }
+        }
 
-    //     const configObj = {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             //'Accept': 'application/json'
-    //         },
-    //         body: JSON.stringify(owner)
-    //     }
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                //'Accept': 'application/json'
+            },
+            body: JSON.stringify(owner)
+        }
 
-    //     fetch(`${this.endpoint}/owners`, configObj)
-    //     .then(resp => resp.json())
-    //     .then(owner => {
-    //         //console.log(pet)
-    //         const o = new Owner(owner)
-    //         o.slapOnDom2()
-    //     })  
-    // }
+        fetch(`${this.endpoint}/owners`, configObj)
+        .then(resp => resp.json())
+        .then(owner => {
+            //console.log(pet)
+            const o = new Owner(owner)
+            o.slapOnDom2()
+        })  
+    }
 }
