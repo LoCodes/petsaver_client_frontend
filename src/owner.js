@@ -17,6 +17,7 @@ class Owner {
 
 
         Owner.all.push(this)  // pushed all owners into all array 
+       
 
     }
 

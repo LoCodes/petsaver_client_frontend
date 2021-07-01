@@ -15,7 +15,7 @@ class Pet {
     static petForm = document.getElementById("form-container")
 
     constructor({id, name, age, species, breed, image_url, owner_id}){  // mimic my backend with category id to easily access the has_many relationship 
-        // super(name)  CAN I SUPER TO GET OWNER NAME?? 
+        // super(name)  CAN I SUPER TO GET OWNER NAME??
         this.id = id 
         this.name = name 
         this.age = age
@@ -33,7 +33,7 @@ class Pet {
         
 
         Pet.all.push(this)  // this is that newly made Pet instance 
-
+        
     }    
 
 
@@ -73,20 +73,21 @@ class Pet {
             
 
             Owner: <select id="owner-select" name="owner-select" >
-                        <option value="1"> Loren </option>
+                        
                    </select>
             
             <input type="submit" id="create" >
         <form>
         
         `
-        
+       
         
         
     }
 
     static populateSelectBox() {
-        //debugger;
+       
+    
         const selectBox = document.getElementById('owner-select')
         for (const owner of Owner.all) {
             
