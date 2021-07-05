@@ -1,3 +1,7 @@
+h1 {
+    
+}
+
 h3 {
     color: wheat;
     /* background-color: cyan; */
@@ -5,4 +9,9 @@ h3 {
 
 body {
     background-color: darkcyan;
+}
+
+.container{
+    width:80%;
+    margin:auto;
 }

@@ -15,7 +15,6 @@ class Pet {
     static petForm = document.getElementById("form-container")
 
     constructor({id, name, age, species, breed, image_url, owner_id}){  // mimic my backend with category id to easily access the has_many relationship 
-        // super(name)  CAN I SUPER TO GET OWNER NAME??
         this.id = id 
         this.name = name 
         this.age = age
@@ -42,13 +41,16 @@ class Pet {
         
         this.element.innerHTML += `
             <div>
-                <h3> ${this.name}</h3>                
+                <h3> Name: ${this.name}</h3>                
                 
-                <p>${this.age} - ${this.species} - ${this.breed} - ${owner.name}</p>
+                <p> <strong> Age: </strong> ${this.age} 
+                <strong> Species: </strong> ${this.species} 
+                <strong> Breed: </strong> ${this.breed} 
+                <strong> Host: </strong> ${owner.name}</p>
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>
-            <button id='edit-btn'> Edit </button>
+            
             <button id='delete-btn'> Delete </button>
         `
 
