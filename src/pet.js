@@ -41,12 +41,14 @@ class Pet {
         
         this.element.innerHTML += `
             <div>
-                <h3> Name: ${this.name}</h3>                
+                <h3> </h3>                
                 
-                <p> <strong> Age: </strong> ${this.age} 
-                <strong> Species: </strong> ${this.species} 
-                <strong> Breed: </strong> ${this.breed} 
-                <strong> Host: </strong> ${owner.name}</p>
+                <p> 
+                 Name: <strong> ${this.name} </strong>
+                 Age: <strong> ${this.age} </strong>
+                 Species: <strong> ${this.species} </strong>
+                 Breed: <strong> ${this.breed} </strong>
+                 Host: <strong> ${owner.name}</p>
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>

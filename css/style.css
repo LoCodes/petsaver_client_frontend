@@ -7,15 +7,29 @@ h3 {
     /* background-color: cyan; */
 }
 
+.owners {
+    line-height: 1em;
+}
+
 body {
     background-color: darkcyan;
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px;
 
+    
+
 }
 
 .container{
     width:80%;
     margin:auto;
+}
+
+.box-1 {
+    background-color: wheat;
+}
+
+.owner-list ul {
+    display: inline-flex;
 }

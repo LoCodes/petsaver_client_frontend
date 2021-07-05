@@ -11,7 +11,7 @@ class Owner {
         this.id = id
         this.name = name
 
-        this.element = document.createElement('p')   // instantiated element with the owner 
+        this.element = document.createElement('ul')   // instantiated element with the owner 
         this.element.dataset.id = this.id     // set the id to the element 
         this.element.id = `owner-${this.id}`  // set  new element id 
 
@@ -22,11 +22,12 @@ class Owner {
     }
 
     ownerHTML() {   // created all these elements for each owner created in 'ul' element 
+
         
         this.element.innerHTML += `
-            <div>
+            <div class="owner-list" >
                 
-                <h4> ${this.name}</h4>
+                <ul> ${this.name}</ul>
 
             </div> 
         
