@@ -74,7 +74,7 @@ class Pet {
             Breed: <input type="text" id="breed"> <br>
             Image: <input placeholder="image url" type="text" id="image_url"> <br>       
 
-            Owner: <select id="owner-select" name="owner-select" >
+            Host: <select id="owner-select" name="owner-select" >
                         
                    </select>
 
