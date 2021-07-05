@@ -22,12 +22,12 @@ class Owner {
     }
 
     ownerHTML() {   // created all these elements for each owner created in 'ul' element 
-
+        
         
         this.element.innerHTML += `
             <div class="owner-list" >
                 
-                <ul> ${this.name}</ul>
+                <li> ${this.name}</li>
 
             </div> 
         

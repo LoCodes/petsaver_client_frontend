@@ -1,3 +1,8 @@
+/* *{
+    margin: 0;
+    padding:0;
+} */
+
 h1 {
     
 }
@@ -12,7 +17,7 @@ h3 {
 }
 
 body {
-    background-color: darkcyan;
+    background-color: rgb(233, 215, 181);
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px;
@@ -27,9 +32,29 @@ body {
 }
 
 .box-1 {
-    background-color: wheat;
+    background-color: white;
+    padding: 20px;
+    border: 3px dotted #ccc;
+    margin: 20px 0;    
 }
 
-.owner-list ul {
-    display: inline-flex;
+/* .owner-list {
+    display: flex;
+} */
+
+
+.box-1 h1 {
+    text-align: center;
 }
+
+.my-form {
+    padding:20px
+}
+
+.my-form input {
+    padding: 8px;
+    width: 50%;
+
+}
+
+

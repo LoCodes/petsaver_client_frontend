@@ -68,13 +68,11 @@ class Pet {
     static renderForm(){
         Pet.petForm.innerHTML += `
         <form id="new-pet-form">
-            Name: <input type="text" id="name">
-            Age: <input type="text" id="age">
-            Species: <input type="text" id="species">
-            Breed: <input type="text" id="breed">
-            Image: <input placeholder="image url" type="text" id="image_url">
-
-            
+            Name: <input type="text" id="name"> <br>
+            Age: <input type="text" id="age"> <br>
+            Species: <input type="text" id="species"> <br>
+            Breed: <input type="text" id="breed"> <br>
+            Image: <input placeholder="image url" type="text" id="image_url"> <br>       
 
             Owner: <select id="owner-select" name="owner-select" >
                         
