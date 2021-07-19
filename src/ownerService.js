@@ -15,7 +15,7 @@ class OwnerService{   //new instance of a class
                 const o = new Owner(owner)  // created new instance of owner passing in each iterated owner 
                 
                 
-                o.slapOnDom2() // grabbed that iterated array and slapped on the dom 
+                o.renderOwner() // grabbed that iterated array and slapped on the dom 
                
             }
             Pet.renderForm()     
@@ -45,7 +45,7 @@ class OwnerService{   //new instance of a class
         .then(owner => {
             //console.log(pet)
             const o = new Owner(owner)
-            o.slapOnDom2()
+            o.renderOwner()
         })  
     }
 }

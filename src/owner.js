@@ -37,7 +37,7 @@ class Owner {
     }
 
 
-    slapOnDom2() {   // appending the owners into the DOM 
+    renderOwner() {   // appending the owners into the DOM 
         Owner.ownersContainer.appendChild(this.ownerHTML())
     }
 
