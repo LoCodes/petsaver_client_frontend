@@ -4,7 +4,7 @@ class Owner {
     static ownersContainer = document.getElementById("owners-container")  // grabbed the element were manipulating
 
     // do I wanna add a 
-    static ownerForm = document.getElementById("form-container")
+    static ownerForm = document.getElementById("owner-form-container")
 
 
     constructor({id, name}) {    // instantiated owner with its id and name 
@@ -34,6 +34,23 @@ class Owner {
         `
 
         return this.element  
+    }
+
+    static renderForm2() {
+        Owner.ownerForm.innerHTML += `
+        <form id="new-owner-form"> 
+           New Host Name: <input type="text" id="name">
+
+
+            <input type="submit" id="create" >
+
+
+        <form>
+
+
+
+        `
+
     }
 
 

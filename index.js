@@ -19,6 +19,7 @@ petService.getPets()
 
 
 Pet.petForm.addEventListener('submit', handleSubmit) // submits form 
+Owner.ownerForm.addEventListener('submit', handleSubmit2)
 
 // Owner.renderForm2() 
 // Owner.ownerForm.addEventListener('submit', handleSubmit2)
@@ -31,12 +32,14 @@ function handleSubmit(){  // event handler for form
     event.preventDefault()
     petService.createPet()
     
+    
     event.target.reset()   
 }
-// function handleSubmit2(){
 
-//     event.preventDefault()
-//     ownerService.createOwner()
+function handleSubmit2(){
+
+    event.preventDefault()
+    ownerService.createOwner()
     
-//     event.target.reset()
-// }
+    event.target.reset()
+}

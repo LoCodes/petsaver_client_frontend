@@ -60,7 +60,7 @@ class Pet {
         return this.element
     } // seperated from appending incase you wanna edit this, it wont automatically re-append to DOM. NO duplicates!
 
-    slapOnDom(){
+    renderPet(){
         Pet.petsContainer.appendChild(this.petHTML())
     }
 

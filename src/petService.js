@@ -19,7 +19,7 @@ class PetService{
             for (const pet of pets) {
                 
                 const p = new Pet(pet) // destructure feature "pet " rather saying pet.name, pet.age, etc 
-                p.slapOnDom()
+                p.renderPet()
             }
             
         }) /// We dont wanna keep calling this, we only wanna call it one time. 
@@ -59,7 +59,7 @@ class PetService{
             //console.log(pet)
     
             const p = new Pet(pet)
-            p.slapOnDom()
+            p.renderPet()
         })        
     }
 
