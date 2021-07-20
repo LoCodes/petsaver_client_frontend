@@ -36,6 +36,11 @@ class Owner {
         return this.element  
     }
 
+    renderOwner() {   // appending the owners into the DOM 
+        Owner.ownersContainer.appendChild(this.ownerHTML())
+    }
+
+
     static renderForm2() {
         Owner.ownerForm.innerHTML += `
         <form id="new-owner-form"> 
@@ -46,16 +51,9 @@ class Owner {
 
 
         <form>
-
-
-
         `
-
     }
 
 
-    renderOwner() {   // appending the owners into the DOM 
-        Owner.ownersContainer.appendChild(this.ownerHTML())
-    }
-
+    
 }

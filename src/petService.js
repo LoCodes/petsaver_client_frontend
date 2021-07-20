@@ -22,24 +22,22 @@ class PetService{
                 p.renderPet()
             }
             
-        }) /// We dont wanna keep calling this, we only wanna call it one time. 
+        })
         // added curly braces in the constructor properties to utilize destructuring features 
     } 
 
  // gather data for this for then send post request to our service 
     createPet(){
         const pet = {
-            //name: document.createElement('name').value,
             name: document.getElementById('name').value,
             
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
-            image_url: document.getElementById('image_url').value,  //FIXED!
+            image_url: document.getElementById('image_url').value, 
             
-            // owner_id: document.getElementById('owner_id').value, //UPDATE LATER!                
-            // owner_parsed: parseInt(owner_id)
-            owner_id: parseInt(document.getElementById('owner-select').value) // not grabbing name only id 
+            
+            owner_id: parseInt(document.getElementById('owner-select').value) 
             
         }
         

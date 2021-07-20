@@ -6,8 +6,7 @@
 class Pet {
 
     // remember objects here only made the fetch call once. 
-    static all = [] //- you have to remove those elements inside of this array, delete does not refresh the page. 
-    // if you do delete an element you might have to add a method for the front end to FILTER out and remove that element from this array 
+    static all = [] 
 
     static petsContainer = document.getElementById("pets-container") // where to append this object
 
@@ -55,9 +54,9 @@ class Pet {
             <button id='delete-btn'> Delete </button>
         `
 
-        //console.log(this.image_url)
+       
         return this.element
-    } // seperated from appending incase you wanna edit this, it wont automatically re-append to DOM. NO duplicates!
+    } 
 
     renderPet(){
         Pet.petsContainer.appendChild(this.petHTML())
@@ -82,10 +81,7 @@ class Pet {
             <input type="submit" id="create" >
         <form>
         
-        `
-    
-        
-        
+        `            
     }
 
     static populateSelectBox() {
@@ -99,18 +95,8 @@ class Pet {
         }       
     }
 
-    // handleButton = () => {
-    //     if (event.target.innerText === 'Delete'){
-    //         this.element.remove()
-    //         petService.deletePet(this.id)
-    //     } else if (event.target.innerText === 'Edit'){
-    //         //do something 
-    //         this.element.onchange()
-    //     }
-
-    // }
-
-    // handleEdit 
+ 
+   
 
     handleDelete = (event) => {
        
