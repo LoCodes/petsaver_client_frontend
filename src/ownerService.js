@@ -18,7 +18,7 @@ class OwnerService{   //new instance of a class
                 o.renderOwner() // grabbed that iterated array and slapped on the dom 
                
             }
-            Owner.renderForm2()
+            Owner.renderForm()
             Pet.renderForm()     
             Pet.populateSelectBox()
         })

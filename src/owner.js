@@ -3,11 +3,11 @@ class Owner {
 
     static ownersContainer = document.getElementById("owners-container")  // grabbed the element were manipulating
 
-    // do I wanna add a 
+
     static ownerForm = document.getElementById("owner-form-container")
 
 
-    constructor({id, name}) {    // instantiated owner with its id and name 
+    constructor({id, name}) {    // initializing owner with its id and name 
         this.id = id
         this.name = name
 
@@ -21,7 +21,7 @@ class Owner {
 
     }
 
-    ownerHTML() {   // created all these elements for each owner created in 'ul' element 
+    ownerHTML() {   
         
         
         this.element.innerHTML += `
@@ -41,7 +41,7 @@ class Owner {
     }
 
 
-    static renderForm2() {
+    static renderForm() {
         Owner.ownerForm.innerHTML += `
         <form id="new-owner-form"> 
            New Host Name: <input type="text" id="owner-name">

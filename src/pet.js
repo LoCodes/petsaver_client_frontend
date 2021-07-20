@@ -1,19 +1,15 @@
 
 
-// 2. append pet object into the dom 
-
-
 class Pet {
 
-    // remember objects here only made the fetch call once. 
     static all = [] 
 
-    static petsContainer = document.getElementById("pets-container") // where to append this object
+    static petsContainer = document.getElementById("pets-container") 
 
 
     static petForm = document.getElementById("form-container")
 
-    constructor({id, name, age, species, breed, image_url, owner_id}){  // mimic my backend with category id to easily access the has_many relationship 
+    constructor({id, name, age, species, breed, image_url, owner_id}){  
         this.id = id 
         this.name = name 
         this.age = age
@@ -23,19 +19,19 @@ class Pet {
         this.owner_id = owner_id
 
 
-        this.element = document.createElement('ol') // instantiated with its own element
-        this.element.dataset.id = this.id  //contain the encoded Values of Attributes of that object.
+        this.element = document.createElement('ol') 
+        this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
 
 
-        Pet.all.push(this)  // this is that newly made Pet instance 
+        Pet.all.push(this) 
         
     }    
 
 
     petHTML = () => {
-        const owner = Owner.all.find(owner => this.owner_id === owner.id ) // had to iterate over the owner to get owner.name
+        const owner = Owner.all.find(owner => this.owner_id === owner.id )
         
         this.element.innerHTML += `
             <div>
@@ -59,6 +55,7 @@ class Pet {
     } 
 
     renderPet(){
+        
         Pet.petsContainer.appendChild(this.petHTML())
     }
 
@@ -95,7 +92,6 @@ class Pet {
         }       
     }
 
- 
    
 
     handleDelete = (event) => {

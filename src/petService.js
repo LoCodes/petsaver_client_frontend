@@ -6,24 +6,31 @@
 class PetService{
 
     constructor(endpoint){ 
-        this.endpoint = endpoint  // have this endpoint to reference back to rather than calling base_url everywhere 
+        this.endpoint = endpoint 
     }
 
-    // 1. Read/Index Action
 
     getPets(){
-        fetch(`${this.endpoint}/pets`) // getting an array of object - pets from backend 
+        fetch(`${this.endpoint}/pets`) 
         .then(resp => resp.json())
         .then(pets => {
+            pets.sort(function(a,b){
+                console.log(a,b)
+                if(a.name > b.name) { return 1; }
+                if(a.name < b.name) {return -1;}
+                return 0;
+            });
             
             for (const pet of pets) {
                 
-                const p = new Pet(pet) // destructure feature "pet " rather saying pet.name, pet.age, etc 
+                const p = new Pet(pet)
+               
                 p.renderPet()
             }
             
+            
         })
-        // added curly braces in the constructor properties to utilize destructuring features 
+        
     } 
 
  // gather data for this for then send post request to our service 
