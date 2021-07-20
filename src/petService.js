@@ -31,6 +31,7 @@ class PetService{
         const pet = {
             //name: document.createElement('name').value,
             name: document.getElementById('name').value,
+            
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
@@ -41,7 +42,7 @@ class PetService{
             owner_id: parseInt(document.getElementById('owner-select').value) // not grabbing name only id 
             
         }
-
+        
         
 
         const configObj = {

@@ -39,7 +39,7 @@ class Owner {
     static renderForm2() {
         Owner.ownerForm.innerHTML += `
         <form id="new-owner-form"> 
-           New Host Name: <input type="text" id="name">
+           New Host Name: <input type="text" id="owner-name">
 
 
             <input type="submit" id="create" >

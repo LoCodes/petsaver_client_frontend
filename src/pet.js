@@ -25,18 +25,17 @@ class Pet {
 
 
         this.element = document.createElement('ol') // instantiated with its own element
-        this.element.dataset.id = this.id 
+        this.element.dataset.id = this.id  //contain the encoded Values of Attributes of that object.
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
 
-        
 
         Pet.all.push(this)  // this is that newly made Pet instance 
         
     }    
 
 
-    petHTML(){
+    petHTML = () => {
         const owner = Owner.all.find(owner => this.owner_id === owner.id ) // had to iterate over the owner to get owner.name
         
         this.element.innerHTML += `
@@ -48,7 +47,7 @@ class Pet {
                  Age: <strong> ${this.age} </strong>
                  Species: <strong> ${this.species} </strong>
                  Breed: <strong> ${this.breed} </strong>
-                 Host: <strong> ${owner.name}</p>
+                 Host: <strong> ${owner ? owner.name : null }</p>
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>
@@ -113,7 +112,7 @@ class Pet {
 
     // handleEdit 
 
-    handleDelete = () =>{
+    handleDelete = (event) => {
        
         if (event.target.innerText === 'Delete'){
             this.element.remove()

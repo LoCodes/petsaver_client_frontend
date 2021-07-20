@@ -28,7 +28,7 @@ class OwnerService{   //new instance of a class
     createOwner() {
         const owner = {
 
-            name: document.getElementById('name').value 
+            name: document.getElementById('owner-name').value 
 
         }
 
