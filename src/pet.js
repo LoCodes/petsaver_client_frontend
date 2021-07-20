@@ -46,6 +46,8 @@ class Pet {
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>
+
+            <button id='adopted-btn' > Adopted </button> 
             
             <button id='delete-btn'> Delete </button>
         `

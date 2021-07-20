@@ -14,6 +14,8 @@ class PetService{
         fetch(`${this.endpoint}/pets`) 
         .then(resp => resp.json())
         .then(pets => {
+
+            // sorted pets alphabetically 
             pets.sort(function(a,b){
                 console.log(a,b)
                 if(a.name > b.name) { return 1; }
