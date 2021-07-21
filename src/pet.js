@@ -5,7 +5,12 @@ class Pet {
     static all = [] 
 
     static petsContainer = document.getElementById("pets-container") 
+    
 
+    // btn = document.getElementById('adopted-btn')
+    
+
+   
 
     static petForm = document.getElementById("form-container")
 
@@ -23,6 +28,7 @@ class Pet {
         this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
+        this.element.addEventListener('click', this.handleAdopt)
 
 
         Pet.all.push(this) 
@@ -47,14 +53,40 @@ class Pet {
                                                 
             </div>
 
-            <button id='adopted-btn' > Adopted </button> 
+
+            <button id='adopted-btn'> Adopt </button> 
             
             <button id='delete-btn'> Delete </button>
         `
+        
+
 
        
         return this.element
     } 
+
+   
+
+   
+
+    
+
+    // handleAdopt = (event) => {
+    //     const adoptedContainer = document.getElementById("adopted-container")
+    //     if (event.target.innerText === 'Adopt'){           
+    //         this.element.append(adoptedContainer)
+    
+    //     //     event.target.parentNode.parentNode.detach().appendTo("#adopted-container")
+    //     //     petsContainer.appendChild(this.element)
+    //     //     this.element.adoptedContainer.appendChild(this.adoptedHTML())
+    //     }
+    // }
+   
+
+
+     
+    
+    
 
     renderPet(){
         
@@ -94,13 +126,19 @@ class Pet {
         }       
     }
 
-   
+
+
+ 
 
     handleDelete = (event) => {
        
         if (event.target.innerText === 'Delete'){
+            
             this.element.remove()
             petService.deletePet(this.id)
         }
     }
+
+    
 }
+

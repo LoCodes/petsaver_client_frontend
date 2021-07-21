@@ -17,8 +17,8 @@ class PetService{
 
             // sorted pets alphabetically 
             pets.sort(function(a,b){
-                console.log(a,b)
-                if(a.name > b.name) { return 1; }
+                // console.log(a,b)
+                if(a.name > b.name) { return 1;}
                 if(a.name < b.name) {return -1;}
                 return 0;
             });
@@ -34,6 +34,9 @@ class PetService{
         })
         
     } 
+
+    
+    
 
  // gather data for this for then send post request to our service 
     createPet(){
