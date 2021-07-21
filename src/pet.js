@@ -55,7 +55,8 @@ class Pet {
                  Age: <strong> ${this.age} </strong>
                  Species: <strong> ${this.species} </strong>
                  Breed: <strong> ${this.breed} </strong>
-                 Host: <strong> ${owner ? owner.name : null }</p>
+                 Host: <strong> ${owner ? owner.name : null }</p> 
+                 Adopted: <strong> ${this.adopted} </strong>
                 <img src=${this.image_url} height="200" width="250">
                                                 
             </div>

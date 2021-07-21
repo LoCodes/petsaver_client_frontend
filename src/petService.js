@@ -33,7 +33,7 @@ class PetService{
             
         })
 
-        
+
         
     } 
 
@@ -48,6 +48,7 @@ class PetService{
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
+            adopted: document.getElementById('adopted').value, 
             image_url: document.getElementById('image_url').value, 
             
             
