@@ -14,7 +14,7 @@ class Pet {
 
     static petForm = document.getElementById("form-container")
 
-    constructor({id, name, age, species, breed, image_url, owner_id}){  
+    constructor({id, name, age, species, breed, image_url, owner_id, adopted}){  
         this.id = id 
         this.name = name 
         this.age = age
@@ -22,13 +22,20 @@ class Pet {
         this.breed = breed 
         this.image_url = image_url 
         this.owner_id = owner_id
+        this.adopted = adopted
 
 
         this.element = document.createElement('ol') 
         this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
-        this.element.addEventListener('click', this.handleAdopt)
+        // this.element.addEventListener('click', this.handleAdopt)
+        this.element.addEventListener('click', (e) => {
+            e.preventDefault();
+            let adoptBtn = e.target.id === 'adopted-btn';
+            // debugger;
+
+        })
 
 
         Pet.all.push(this) 
@@ -63,7 +70,12 @@ class Pet {
 
        
         return this.element
-    } 
+    }
+
+    // handleAdopt = () => {
+    //     let adoptedBtn = e.target.innerText === 'Adopted'; 
+    //     adoptedBtn.alert("HI")
+    // }
 
    
 
@@ -81,6 +93,15 @@ class Pet {
     //     //     this.element.adoptedContainer.appendChild(this.adoptedHTML())
     //     }
     // }
+
+    handleDelete = (event) => {
+       
+        if (event.target.innerText === 'Delete'){
+            
+            this.element.remove()
+            petService.deletePet(this.id)
+        }
+    }
    
 
 
@@ -130,14 +151,7 @@ class Pet {
 
  
 
-    handleDelete = (event) => {
-       
-        if (event.target.innerText === 'Delete'){
-            
-            this.element.remove()
-            petService.deletePet(this.id)
-        }
-    }
+    
 
     
 }
