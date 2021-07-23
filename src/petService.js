@@ -16,12 +16,14 @@ class PetService{
         .then(pets => {
 
             // sorted pets alphabetically 
-            pets.sort(function(a,b){
-                // console.log(a,b)
-                if(a.name > b.name) { return 1;}
-                if(a.name < b.name) {return -1;}
-                return 0;
-            });
+            // pets.sort(function(a,b){
+            //     // console.log(a,b)
+            //     if(a.name > b.name) { return 1;}
+            //     if(a.name < b.name) {return -1;}
+            //     return 0;
+            // });
+
+             
             
             for (const pet of pets) {
                 
@@ -48,7 +50,7 @@ class PetService{
             age:  document.getElementById('age').value,
             species: document.getElementById('species').value,
             breed: document.getElementById('breed').value,
-            adopted: document.getElementById('adopted').value, 
+            // adopted: document.getElementById('adopted').value, 
             image_url: document.getElementById('image_url').value, 
             
             
@@ -86,5 +88,41 @@ class PetService{
         })
         .then(resp => resp.json())
         .then(json => alert(json.message))
-    }     
+    }
+
+
+
+    
+    
+    adoptPet(id){        
+        
+        fetch(`${this.endpoint}/pets/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "adopted": true
+
+            }
+            )
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            debugger; 
+            let pet = Pet.all.find(pet => this.pet_id === pet.id)
+    
+            pet.adopted = data.adopted
+        })
+        // .then(resp => resp.json())
+        // .then(adopted  => {
+        //     let pet = Pet.all.find(pet => pet.id === pet_id)
+        //     pet.adopted = adopted.adopted
+           
+    
+        //     // const p = new Pet(pet)
+        //     // p.renderPet()
+        // }) 
+            
+    }  
 } 

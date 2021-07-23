@@ -9,7 +9,7 @@ class Pet {
 
     // btn = document.getElementById('adopted-btn')
     
-
+    
    
 
     static petForm = document.getElementById("form-container")
@@ -30,19 +30,44 @@ class Pet {
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
         // this.element.addEventListener('click', this.handleAdopt)
-        this.element.addEventListener('click', (e) => {
-            e.preventDefault();
-            let adoptBtn = e.target.id === 'adopted-btn';
-            // debugger;
+
+
+        this.element.addEventListener('click', () => {
+            
+            const adoptBtn = event.target.innerText === 'Adopt';
+            // let adoptStatus = document.querySelector("#pet-91 > strong > div")       
+            
+            if(adoptBtn){
+                this.element
+                petService.adoptPet(this.id)
+               
+                
+
+                
+            }
 
         })
-
-
+        
+        
         Pet.all.push(this) 
         
     }    
-
-
+    
+    handleAdopt = (event) => {
+        let adoptStatus = document.querySelector("#pet-91 > strong > div") 
+        
+        if(event.target.innerText === 'Adopt') {
+            this.element
+            petService.adoptPet(this.id)
+            
+            // if(this.adopted){
+            //     !this.adopted
+            // }
+              
+           
+        }
+    }
+    
     petHTML = () => {
         const owner = Owner.all.find(owner => this.owner_id === owner.id )
         
@@ -55,11 +80,15 @@ class Pet {
                  Age: <strong> ${this.age} </strong>
                  Species: <strong> ${this.species} </strong>
                  Breed: <strong> ${this.breed} </strong>
-                 Host: <strong> ${owner ? owner.name : null }</p> 
-                 Adopted: <strong> ${this.adopted} </strong>
+                 Host: <strong> ${owner ? owner.name : null }
+                 </p> 
+                 
                 <img src=${this.image_url} height="200" width="250">
+
+              
                                                 
             </div>
+            <div> Adopted: <strong> ${this.adopted} </strong> </div> 
 
 
             <button id='adopted-btn'> Adopt </button> 
@@ -67,16 +96,12 @@ class Pet {
             <button id='delete-btn'> Delete </button>
         `
         
-
-
        
         return this.element
     }
 
-    // handleAdopt = () => {
-    //     let adoptedBtn = e.target.innerText === 'Adopted'; 
-    //     adoptedBtn.alert("HI")
-    // }
+    //
+
 
    
 
@@ -100,6 +125,7 @@ class Pet {
         if (event.target.innerText === 'Delete'){
             
             this.element.remove()
+          
             petService.deletePet(this.id)
         }
     }
