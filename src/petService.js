@@ -21,22 +21,14 @@ class PetService{
             //     if(a.name > b.name) { return 1;}
             //     if(a.name < b.name) {return -1;}
             //     return 0;
-            // });
-
-             
-            
+            // });                        
             for (const pet of pets) {
                 
                 const p = new Pet(pet)
                
                 p.renderPet()
-            }
-            
-            
-        })
-
-
-        
+            }                       
+        })        
     } 
 
     
@@ -102,27 +94,19 @@ class PetService{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                
                 "adopted": true
-
+                
             }
             )
         })
         .then(resp => resp.json())
         .then(data => {
-            debugger; 
-            let pet = Pet.all.find(pet => this.pet_id === pet.id)
-    
-            pet.adopted = data.adopted
+            
+            // let pet = Pet.all.find(pet => this.pet_id === pet.id)
+            // debugger;
+            data.adopted
         })
-        // .then(resp => resp.json())
-        // .then(adopted  => {
-        //     let pet = Pet.all.find(pet => pet.id === pet_id)
-        //     pet.adopted = adopted.adopted
-           
-    
-        //     // const p = new Pet(pet)
-        //     // p.renderPet()
-        // }) 
             
     }  
 } 

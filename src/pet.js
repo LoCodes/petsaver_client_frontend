@@ -29,24 +29,26 @@ class Pet {
         this.element.dataset.id = this.id 
         this.element.id = `pet-${this.id}`
         this.element.addEventListener('click', this.handleDelete)
-        // this.element.addEventListener('click', this.handleAdopt)
+        this.element.addEventListener('click', this.handleAdopt)       
 
 
-        this.element.addEventListener('click', () => {
+        // -------- same as above --------------------------
+
+
+        // this.element.addEventListener('click', (event) => {
+        //     event.preventDefault
+        //     const adoptBtn = event.target.innerText === 'Adopt';
+           
             
-            const adoptBtn = event.target.innerText === 'Adopt';
-            // let adoptStatus = document.querySelector("#pet-91 > strong > div")       
-            
-            if(adoptBtn){
-                this.element
-                petService.adoptPet(this.id)
-               
+        //     if(adoptBtn){
+        //         let pet = Pet.all.find(pet => this.pet_id === pet.id)
+        //         this.element
+        //         petService.adoptPet(this.id)
+        //         // debugger;                            
                 
+        //     }
 
-                
-            }
-
-        })
+        // })
         
         
         Pet.all.push(this) 
@@ -54,22 +56,29 @@ class Pet {
     }    
     
     handleAdopt = (event) => {
-        let adoptStatus = document.querySelector("#pet-91 > strong > div") 
         
-        if(event.target.innerText === 'Adopt') {
+        const adoptBtn = event.target.innerText === 'Adopt';                   
+        if(adoptBtn){
+            let pet = Pet.all.find(pet => this.pet_id === pet.id)
             this.element
             petService.adoptPet(this.id)
-            
-            // if(this.adopted){
-            //     !this.adopted
-            // }
-              
-           
+            // debugger;                              
+        }
+       
+    }
+
+    handleDelete = (event) => {     
+        if (event.target.innerText === 'Delete'){           
+            this.element.remove()         
+            petService.deletePet(this.id)
         }
     }
+   
     
+
+
     petHTML = () => {
-        const owner = Owner.all.find(owner => this.owner_id === owner.id )
+        const owner = Owner.all.find(owner => this.owner_id === owner.id )      
         
         this.element.innerHTML += `
             <div>
@@ -100,8 +109,7 @@ class Pet {
         return this.element
     }
 
-    //
-
+ 
 
    
 
@@ -120,15 +128,6 @@ class Pet {
     //     }
     // }
 
-    handleDelete = (event) => {
-       
-        if (event.target.innerText === 'Delete'){
-            
-            this.element.remove()
-          
-            petService.deletePet(this.id)
-        }
-    }
    
 
 

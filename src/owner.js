@@ -15,10 +15,7 @@ class Owner {
         this.element.dataset.id = this.id     // set the id to the element 
         this.element.id = `owner-${this.id}`  // set  new element id 
 
-
-        Owner.all.push(this)  // pushed all owners into all array 
-       
-
+        Owner.all.push(this)  // pushed all owners into all array       
     }
 
     ownerHTML() {   
@@ -46,14 +43,9 @@ class Owner {
         <form id="new-owner-form"> 
            New Host Name: <input type="text" id="owner-name">
 
-
             <input type="submit" id="create" >
-
 
         <form>
         `
-    }
-
-
-    
+    }    
 }
