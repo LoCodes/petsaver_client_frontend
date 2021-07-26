@@ -46,19 +46,7 @@ function ownerSubmit(event){
     event.target.reset()
 }
 
-
-// document.getElementById("sortB").addEventListener("click", function() { 
-//     const pets = Pet.all
-//     const sortedPets = pets.sort((a,b) => (a.name < b.name) ? 1 : -1)
-//     debugger;
-//     for(pet of sortedPets){
-//         pet.element.innerHTML = ""
-//         pet.renderPet()
-//     }
-// })
-
-
-
+// sort pets by name 
 document.getElementById("sortA").addEventListener("click", function() {
     const pets = Pet.all 
     const sortBack = pets.sort((b, a) => (a.name < b.name) ? 1 : -1)

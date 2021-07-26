@@ -16,12 +16,12 @@ class PetService{
         .then(pets => {
 
             // sorted pets alphabetically 
-            // pets.sort(function(a,b){
-            //     // console.log(a,b)
-            //     if(a.name > b.name) { return 1;}
-            //     if(a.name < b.name) {return -1;}
-            //     return 0;
-            // });                        
+            pets.sort(function(a,b){
+                // console.log(a,b)
+                if(a.name > b.name) { return 1;}
+                if(a.name < b.name) {return -1;}
+                return 0;
+            });                        
             for (const pet of pets) {
                 
                 const p = new Pet(pet)
